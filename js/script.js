@@ -1,22 +1,14 @@
-document.addEventListener('DOMContentLoaded', function() {
-    // Scroll behavior for navigation links
-    const navLinks = document.querySelectorAll('nav ul li a');
-    
-    navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            const targetId = link.getAttribute('href').substring(1);
-            const targetSection = document.getElementById(targetId);
-            
-            if (targetSection) {
-                window.scrollTo({
-                    top: targetSection.offsetTop - 50,
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
+// JavaScript to cycle through job titles
+document.addEventListener("DOMContentLoaded", function () {
+    const jobTitles = ["DIGITALIST", "DEVELOPER", "VISUALIZER", "FREELANCER"];
+    let index = 0;
+    const jobElement = document.getElementById('job-title');
 
-    // Example interactivity - add more if needed
-    console.log('Portfolio Website Loaded');
+    function changeJob() {
+        jobElement.textContent = jobTitles[index];
+        index = (index + 1) % jobTitles.length; // Cycle through the job titles
+        setTimeout(changeJob, 2000); // Change job every 2 seconds
+    }
+
+    changeJob(); // Start changing jobs
 });

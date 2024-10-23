@@ -3,96 +3,112 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name | Portfolio</title>
+    <title>Piyus Khatri | Portfolio</title>
     <link rel="stylesheet" href="css/styles.css">
     <script defer src="js/script.js"></script>
+
 </head>
 <body>
 
-<header>
-    <h1>Your Name</h1>
-    <nav>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-</header>
+    <header>
+        <nav>
+            <div class="container">
+                <h1 class="logo">
+                    <img src="img/header logo.png" alt="Piyus Khatri Logo">
+                  </h1>
+                  
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
 
-<!-- Home Section -->
-<section id="home">
-    <h2>Welcome to My Portfolio</h2>
-    <p>This is where you can showcase your skills, projects, and experience. Feel free to explore!</p>
-</section>
-
-<!-- About Section -->
-<section id="about">
-    <h2>About Me</h2>
-    <img src="img/profile.jpg" alt="Profile Image" class="profile-img">
-    <p>Hello! I'm [Your Name], a passionate web developer with experience in JavaScript, HTML, CSS, and more.</p>
-</section>
-
-<!-- Skills Section -->
-<section id="skills">
-    <h2>Skills</h2>
-    <div class="skills">
-        <div class="skill-item">
-            <h3>JavaScript</h3>
-            <p>Proficient in modern JavaScript frameworks and libraries.</p>
+    <section class="intro">
+        <div class="container">
+            <h2>✧ MEET PIYUS KHATRI ✧</h2>
+            <p>i am a&nbsp;&nbsp;&nbsp;&nbsp; <span class="job-title" id="job-title">DIGITALIST</span>
+            </p>
         </div>
-        <div class="skill-item">
-            <h3>HTML & CSS</h3>
-            <p>Experienced in building responsive websites using HTML5 and CSS3.</p>
-        </div>
-    </div>
-</section>
+    </section>
 
-<!-- Projects Section -->
-<section id="projects">
-    <h2>Projects</h2>
-    <div class="projects">
-        <div class="project-item">
-            <img src="img/project1.jpg" alt="Project 1 Image">
-            <h3>Project 1: Portfolio Website</h3>
-            <p>A personal portfolio website to showcase my skills, experience, and projects.</p>
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="hidden">About Me</h2> <!-- Keeping the header for structure, but hidden -->
+            <p class="job-sequence">
+                <span class="hidden" id="job1">DIGITALIST</span>
+                <span class="hidden" id="job2">DEVELOPER</span>
+                <span class="hidden" id="job3">VISUALIZER</span>
+                <span class="hidden" id="job4">FREELANCER</span>
+            </p>
         </div>
-        <div class="project-item">
-            <img src="img/project2.jpg" alt="Project 2 Image">
-            <h3>Project 2: Dual Car Race</h3>
-            <p>A JavaScript game prototype that inspired me to pursue computer science.</p>
+    </section>
+
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2>Skills</h2>
+            <p>(You can add your skills here)</p>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- Experience Section -->
-<section id="experience">
-    <h2>Experience</h2>
-    <div class="experience">
-        <div class="experience-item">
-            <h3>Sheetal Real Estate</h3>
-            <p>Currently working as a Digital Marketing Intern.</p>
+    <section id="experience" class="experience">
+        <div class="container">
+            <h2>Experience</h2>
+            <div class="experience-item">
+                <h3>Digital Marketing Intern | Sheetal Real Estate</h3>
+                <p>Currently assisting with online property listings and marketing strategies.</p>
+            </div>
+            <div class="experience-item">
+                <h3>Freelance Developer</h3>
+                <p>Built Discord bots for clients, enhancing their community engagement and functionality.</p>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- Contact Section -->
-<section id="contact">
-    <h2>Contact Me</h2>
-    <form action="submit_form.php" method="POST">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Your Email" required>
-        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-        <input type="submit" value="Send Message">
-    </form>
-</section>
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2>Projects</h2>
+            <div class="project-list">
+                <div class="project-item">
+                    <img src="img/project1.jpg" alt="Project 1 Image">
+                    <h3>Project Title 1</h3>
+                    <p>Description of Project 1.</p>
+                </div>
+                <div class="project-item">
+                    <img src="img/project2.jpg" alt="Project 2 Image">
+                    <h3>Project Title 2</h3>
+                    <p>Description of Project 2.</p>
+                </div>
+                <div class="project-item">
+                    <img src="img/project3.jpg" alt="Project 3 Image">
+                    <h3>Project Title 3</h3>
+                    <p>Description of Project 3.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<footer>
-    <p>&copy; 2024 Your Name. All Rights Reserved.</p>
-</footer>
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <form action="submit_form.php" method="POST">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                <input type="submit" value="Send Message" class="btn">
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Piyus Khatri. All Rights Reserved.</p>
+        </div>
+    </footer>
 
 </body>
 </html>
