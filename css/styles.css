@@ -522,7 +522,7 @@ h2 {
 /* Timeline Styling */
 .timeline {
     position: relative;
-    max-width: 900px;
+    max-width: 1140px;
     margin: 0 auto;
 }
 
@@ -540,7 +540,7 @@ h2 {
 
 .timeline-item {
     position: relative;
-    width: 50%;
+    width: 43%;
     padding: 20px 40px;
     background-color: rgba(0, 0, 0, .1);
     box-shadow: 0 6px 15px #000;
