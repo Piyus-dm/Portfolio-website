@@ -11,11 +11,11 @@
 <body>
 
     <header>
-        <nav>
+        <nav class="sticky-nav" id="navbar"> <!-- Added id="navbar" here -->
             <div class="container">
                 <h1 class="logo">
-                    <img src="img/header logo.png" alt="Piyus Khatri Logo">
-                  </h1>
+                    <img src="img/header logo.png" alt="Piyus Khatri Logo" onclick="location.reload();">
+                </h1>
                   
                 <ul class="nav-links">
                     <li><a href="#about">About</a></li>
@@ -78,7 +78,7 @@
                     <p>Turning data into insights that help make smarter decisions.</p>
                 </div>
                 <div class="skill-item">
-                    <h3>SEO/SEM/Google Ads</h3>
+                    <h3>SEM/Google Ads</h3>
                     <p>Boosting website visibility with optimized content, strategic ads, and search engine marketing to drive traffic and get real results.</p>
                 </div>
                 <div class="skill-item">
@@ -140,47 +140,76 @@
         </div>
     </section>
 
-    <section id="projects" class="projects">
+    <section id="projects" class="projects"></section>
         <div class="container">
-            <h2>Projects</h2>
-            <div class="project-list">
-                <div class="project-item">
-                    <img src="img/project1.jpg" alt="Project 1 Image">
-                    <h3>Project Title 1</h3>
-                    <p>Description of Project 1.</p>
+            <h2 class="section-title">Featured Projects</h2>
+            <p class="section-subtitle">Discover my latest projects, hover over each card to uncover the details and see the impact firsthand.</p>
+            <div class="project-grid">
+                <div class="project-card">
+                    <video src="background theme/project1.mp4" muted loop></video>
+                    <div class="project-overlay">
+                        <h2 class="project-title">Project One</h2>
+                        <p class="project-description">Through strategic ads and targeted campaigns, I boosted a clothing store's sales by 30%, transforming data into impactful growth and capturing new audiences in style.</p>
+                    </div>
                 </div>
-                <div class="project-item">
-                    <img src="img/project2.jpg" alt="Project 2 Image">
-                    <h3>Project Title 2</h3>
-                    <p>Description of Project 2.</p>
+
+                <div class="project-card">
+                    <video src="background theme/project2.mp4" muted loop></video>
+                    <div class="project-overlay">
+                        <h2 class="project-title">Project Two</h2>
+                <p class="project-description">As a freelance graphic designer, I’ve created compelling visuals for various businesses and clients, consistently delivering satisfaction and results through creative design solutions.</p>
+                    </div>
                 </div>
-                <div class="project-item">
-                    <img src="img/project3.jpg" alt="Project 3 Image">
-                    <h3>Project Title 3</h3>
-                    <p>Description of Project 3.</p>
+
+                <div class="project-card">
+                    <video src="background theme/project3.mp4" muted loop></video>
+                    <div class="project-overlay">
+                        <h2 class="project-title">Project Three</h2>
+                        <p class="project-description">As a front-end developer, I’ve helped local businesses grow by building responsive websites and creating their digital presence, making it easier for them to reach customers and succeed online.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2>Contact Me</h2>
-            <form action="submit_form.php" method="POST">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email" required>
-                <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-                <input type="submit" value="Send Message" class="btn">
-            </form>
-        </div>
-    </section>
-    <!-- <h1>asdfadf</h1> -->
+   <!-- Contact Section -->
+<section id="contact" class="contact">
+    <div class="container">
+        <h2>Contact Me</h2>
+        <form action="https://getform.io/f/ayvvpjrb" method="POST"> <!-- Updated action URL for Getform -->
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Piyus Khatri. All Rights Reserved.</p>
+            <!-- Hidden Honeypot field for spam prevention -->
+            <input type="hidden" name="_gotcha" style="display:none !important">
+
+            <input type="submit" value="Send Message" class="btn">
+        </form>
+    </div>
+</section>
+
+<footer class="footer"></footer>
+    <div class="container">
+        <p>&copy; 2024 Piyus Khatri. All Rights Reserved.</p>
+        <div class="social-links">
+            <!-- WhatsApp Icon -->
+            <a href="https://wa.me/+9779846695707" target="_blank" class="social-icon whatsapp" aria-label="WhatsApp">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+            <!-- GitHub Icon -->
+            <a href="https://github.com/Piyus-dm" target="_blank" class="social-icon github" aria-label="GitHub">
+                <i class="fab fa-github"></i>
+            </a>
+            <!-- LinkedIn Icon -->
+            <a href="https://linkedin.com/in/khatri-piyus-0973a5329" target="_blank" class="social-icon linkedin" aria-label="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
         </div>
-    </footer>
+    </div>
+</footer>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js" crossorigin="anonymous"></script>
 
 </body>
 </html>
