@@ -1,5 +1,10 @@
+
+
 /* Global Styles */
 body {
+
+
+    
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
     margin: 0;
@@ -7,6 +12,75 @@ body {
     background: #f4f4f4; /* Light background for better readability */
     color: #333; /* Default text color */
 }
+
+.video-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.intro {
+    position: relative;
+    width: 100%;
+    /* height: 100vh; Full viewport height */
+    overflow: hidden;
+}
+
+/* Container for the video background */
+.video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Ensures the video stays behind the content */
+    overflow: hidden;
+}
+
+/* Video settings */
+#bg-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    object-fit: cover; /* Ensures the video covers the section without being distorted */
+}
+
+/* Container and text styles */
+.container {
+    position: relative;
+    z-index: 1; /* Ensures text is visible above the video */
+    text-align: center;
+    color: #fff; /* White text to contrast with background */
+    padding-top: 20%;
+}
+
+h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+p {
+    font-size: 1.5rem;
+}
+
+/* Responsive typography for smaller screens */
+@media (max-width: 768px) {
+    h2 {
+        font-size: 2rem;
+    }
+
+    p {
+        font-size: 1.2rem;
+    }
+}
+</style>
 
 /* General Container */
 .container {
@@ -18,7 +92,7 @@ body {
 
 /* Header */
 header {
-    background: #2b2a2a; /* Dark background for header */
+    background: #001f3f; /* Dark background for header */
     color: #fff; /* White text color */
     padding: 15px 0; /* Padding for header */
     position: relative; /* To position logo and nav */
@@ -127,7 +201,7 @@ header nav ul li:nth-child(4) {
 
 /* Intro Section */
 .intro {
-    background: #007bff; /* Bright blue background */
+    /* background: #000000; Bright blue background */
     color: #fff; /* White text */
     padding: 80px 0; /* Padding for intro */
     text-align: center; /* Center text */
@@ -144,10 +218,435 @@ header nav ul li:nth-child(4) {
 
 /* Job Titles */
 .job-title {
-    font-size: 36px; /* Adjust font size */
-    font-weight: bold; /* Bold font */
-    color: #ff4081; /* Pink color for job titles */
-    font-family: 'Courier New', Courier, monospace; /* Unique font style */
+    
+    background: linear-gradient(45deg, #ff00ff, #00ffff);
+    background-image: url(https://media.giphy.com/media/26BROrSHlmyzzHf3i/giphy.gif);
+        font-size: 4rem;
+        font-weight: bold;
+        margin: 0;
+        padding: 20px;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        /* text-shadow: 0 0 20px rgba(255, 0, 255, 0.5), 0 0 30px rgba(0, 255, 255, 0.5); */
+        /* animation: glow 2s ease-in-out infinite alternate; */
+      }
+      
+      @keyframes glow {
+        from {
+          text-shadow: 0 0 20px rgba(255, 0, 255, 0.5), 0 0 30px rgba(0, 255, 255, 0.5);
+        }
+        to {
+          text-shadow: 0 0 40px rgba(255, 0, 255, 0.8), 0 0 50px rgba(0, 255, 255, 0.8);
+        }
+      }
+
+
+
+/* Importing a stylish font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+/* Overall about section styling */
+#about {
+    padding: 100px 0;
+    background-color: #f5f5f5;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* H2 Styling */
+#about h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #333;
+    position: relative;
+    animation: slideIn 1s ease-out;
+}
+
+/* H3 Styling */
+#about h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #555;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8;
+    position: relative;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Container styling */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Animation for h2 - sliding in */
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Animation for h3 - fading in */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Adding hover effect for interaction */
+#about h3:hover {
+    color: #000;
+    transition: color 0.3s ease;
+}
+
+/* Import Google Fonts for a sleek, modern look */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+/* Skills Section */
+#skills {
+    padding: 60px 0;
+    background-color: #f5f5f5;
+}
+
+#skills h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 40px;
+    color: #222;
+    position: relative;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+#skills h2::after {
+    content: '';
+    width: 50px;
+    height: 5px;
+    background: #3498db;
+    display: block;
+    margin: 10px auto 0;
+}
+
+/* Skills Grid */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    padding: 0 15px;
+}
+
+/* Skill Item Cards */
+.skill-item {
+    background-color: #f9f9f9;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    opacity: 0;
+    animation: fadeInUp 1.2s forwards ease-in-out;
+    animation-delay: 0.1s;
+}
+
+/* Skill Card Animation */
+.skill-item:nth-child(odd) {
+    animation-delay: 0.3s;
+}
+
+.skill-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Skill Title */
+.skill-item h3 {
+    color: #3498db;
+    margin-bottom: 15px;
+    font-size: 1.6rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Skill Description */
+.skill-item p {
+    font-size: 1.1rem;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Button Animation */
+.skill-item:hover h3 {
+    color: #2c3e50;
+}
+
+/* Animation for Fade-In and Move-Up */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    #skills h2 {
+        font-size: 2rem;
+    }
+
+    .skills-grid {
+        gap: 20px;
+    }
+
+    .skill-item {
+        padding: 20px;
+    }
+
+    .skill-item h3 {
+        font-size: 1.4rem;
+    }
+
+    .skill-item p {
+        font-size: 1rem;
+    }
+}
+
+/* Importing a modern, clean Google font */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600&display=swap');
+
+/* General Styles */
+body {
+    font-family: 'Raleway', sans-serif;
+    background-color: #eee;
+    color: #333;
+}
+
+h2 {
+    font-family: 'Montserrat', sans-serif;  /* Modern and sleek font */
+    text-align: center;
+    font-size: 3rem;  /* Slightly larger for impact */
+    margin-bottom: 50px;
+    font-weight: 700;  /* Bold for emphasis */
+    color: #ffffff;  /* White text for contrast */
+    letter-spacing: 2px;  /* Add some spacing between letters for elegance */
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;  /* Padding to make room for underline */
+    text-transform: uppercase;  /* Capitalize for a bold look */
+    background: linear-gradient(45deg, #93a2b1, #00c6ff);  /* Gradient text effect */
+    -webkit-background-clip: text;  /* Clip background to text */
+    -webkit-text-fill-color: transparent;  /* Set text color to transparent to show gradient */
+    animation: fadeInSlideUp 1.5s ease-in-out both, textGlow 3s ease-in-out infinite alternate;  /* Text animation */
+    border-bottom: 2px solid rgba(255, 255, 255, 0.5);  /* Stylish underline */
+}
+
+/* Keyframe for fade-in and sliding-up animation */
+@keyframes fadeInSlideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);  /* Start 30px below */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);  /* End at normal position */
+    }
+}
+
+/* Keyframe for glowing text */
+@keyframes textGlow {
+    0% {
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(0, 198, 255, 0.3);
+    }
+    100% {
+        text-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 0 0 30px rgba(0, 198, 255, 0.5);
+    }
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+/* Experience Section */
+.experience-section {
+    background-color: #f5f5f5;
+    padding: 100px 0;
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    position: relative;
+}
+
+.experience-section h2 {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #0b3d91;
+    letter-spacing: 2px;
+    margin-bottom: 60px;
+    text-transform: uppercase;
+}
+
+/* Timeline Styling */
+.timeline {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    width: 4px;
+    height: 100%;
+    background-color: #0b3d91;
+    top: 0;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.timeline-item {
+    position: relative;
+    width: 50%;
+    padding: 20px 40px;
+    background-color: rgba(0, 0, 0, .1);
+    box-shadow: 0 6px 15px #000;
+    border-radius: 10px;
+    margin-bottom: 50px;
+    z-index: 2;
+    transition: all 0.4s ease;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: slideIn 0.8s forwards;
+}
+
+.timeline-item:nth-child(odd) {
+    left: 0;
+    animation-delay: 0.2s;
+}
+
+.timeline-item:nth-child(even) {
+    left: 50%;
+    animation-delay: 0.4s;
+}
+
+.timeline-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.timeline-date {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #fff;
+    padding: 10px 15px;
+    background-color: #0b3d91;
+    border-radius: 25px;
+    text-align: center;
+    width: 160px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.timeline-item:nth-child(odd) .timeline-date {
+    right: -180px;
+}
+
+.timeline-item:nth-child(even) .timeline-date {
+    left: -180px;
+}
+
+/* Content Styling */
+.timeline-content h3 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #5b678a;
+}
+
+.timeline-content p {
+    font-size: 1.1rem;
+    color: #8892b0;
+    line-height: 1.8;
+    margin-bottom: 5px;
+}
+
+.timeline-content .location {
+    font-style: italic;
+    color: #5b678a;
+}
+
+/* Animation */
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .timeline::before {
+        left: 20px;
+    }
+
+    .timeline-item {
+        width: 100%;
+        padding-left: 70px;
+        margin-bottom: 40px;
+    }
+
+    .timeline-item:nth-child(odd) {
+        left: 0;
+    }
+
+    .timeline-item:nth-child(even) {
+        left: 0;
+    }
+
+    .timeline-date {
+        left: 20px !important;
+        width: 140px;
+    }
 }
 
 /* About Section */
