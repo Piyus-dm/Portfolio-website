@@ -1161,7 +1161,7 @@ section-title {
 /* Icon Hover Animations asdfasf */
 .social-icon:hover {
     transform: scale(1.2); /* Slight enlargement */
-    /* box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3); Soft glow */
+    /* box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3); Soft glow lado*/
 }
 
 /* Individual Icon Colors on Hover */
