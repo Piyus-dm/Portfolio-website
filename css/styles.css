@@ -24,7 +24,7 @@ body {
     position: relative;
     width: 100%;
     /* height: 100vh; Full viewport height */
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 /* Container for the video background */
@@ -57,8 +57,8 @@ body {
     position: relative;
     z-index: 1; /* Ensures text is visible above the video */
     text-align: center;
-    color: #555861; /* White text to contrast with background */
-    padding-top: 20%;
+   
+    padding-top: 0%;
 }
 
 h2 {
@@ -80,7 +80,6 @@ p {
         font-size: 1.2rem;
     }
 }
-</style>
 
 /* General Container */
 .container {
@@ -90,151 +89,149 @@ p {
     font-family: 'Poppins', sans-serif; /* Updated modern font */
 }
 
+/* Import Google Fonts for a modern look */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@300;500&display=swap');
+
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(92deg, rgb(255 255 255 / 63%), #333);
+    color: #333;
+}
+
 /* Header */
 header {
-    background: rgba(255, 255, 255, 0.5);
-    color: #fff; /* White text color */
-    padding: 2px 0; /* Padding for header */
-    position: relative; /* To position logo and nav */
+    background: #999;
+    color: #fff;
+    padding: 1px 1px;
+    /* position: relative; */
 }
 
-/* Flexbox for Header Layout */
-header nav .container {
-    display: flex;
-    height: 23px;
-    justify-content: space-between; /* Space between logo and nav */
-    align-items: center; /* Vertically align logo and nav */
-}
-
-/* Sticky Navigation Bar */
-nav {
-    background-color: #1f3c88; /* Background color */
-    position: -webkit-sticky; /* Safari support */
-    position: sticky; /* Sticky position */
+/* Sticky Navbar */
+.sticky-nav {
+    position: relative;
     top: 0;
-    z-index: 1000; /* Make sure it's above other elements */
+    background: linear-gradient(135deg, rgb(44 46 48 / 20%), #0b3d91);
     width: 100%;
-    padding: 10px 0;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    transition: background-color 0.4s ease-in-out, box-shadow 0.4s ease-in-out; /* Smooth transition */
+    height: 100px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    transition: background-color 0.4s ease, box-shadow 0.4s ease;
 }
 
-.sticky-nav.sticky {
+.fixed {
     position: fixed;
     top: 0;
+    left: 0;
     width: 100%;
-    z-index: 1000;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(135deg, #1f3c88, #152c5b);
 }
-/* Container for Flexbox Layout */
-nav .container {
+
+.sticky-nav:hover {
+    background: linear-gradient(135deg, #1c2f5a, #101c3a);
+}
+
+/* Container */
+.sticky-nav .container {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
+    justify-content: space-between;
+    padding: 0 20px;
 }
 
-/* Logo Style */
-.logo {
-    margin-left: 0; /* Align logo to the full left */
-    padding-left: 10px; /* Slight padding for breathing room */
-    animation: slideInLeft 1s ease-out; /* Animation for logo */
-}
-
+/* Logo Styling */
 .logo img {
-    width: 120px; /* Adjust the size of the logo */
-    height: auto; /* Maintain aspect ratio */
+    width: 140px;
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.3s ease;
 }
 
-/* Logo Hover Effect */
-nav .logo:hover img {
-    transform: scale(1.1); /* Slight enlargement */
-    transition: transform 0.3s ease-in-out;
+.logo img:hover {
+    transform: scale(1.1);
 }
 
-/* Navigation Menu */
-header nav ul {
-    list-style: none; /* Remove default list style */
-    display: flex; /* Flex display for horizontal list */
-    margin-right: 10px; /* Adjust margin from the right */
-}
-
-/* Navigation Links */
+/* Navbar Links (Desktop View) */
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 20px; /* Space between links */
-}
-
-.nav-links li {
-    position: relative;
+    gap: 25px;
+    transition: all 0.3s ease;
 }
 
 .nav-links li a {
     text-decoration: none;
     font-size: 1.2rem;
     color: #fff;
-    padding: 10px 15px;
-    text-transform: uppercase;
     font-weight: 500;
+    padding: 5px 10px;
     transition: color 0.3s ease, transform 0.3s ease;
+    border-radius: 5px;
+    font-family: 'Roboto', sans-serif;
 }
 
 .nav-links li a:hover {
-    color: #ffdd57; /* Highlight color on hover */
-    transform: translateY(-5px); /* Slight upward motion */
+    color: #ffdd57;
+    background-color: rgba(255, 221, 87, 0.1);
+    transform: scale(1.1);
 }
 
-/* Box Shadow on Scroll (Optional - Can be used with JavaScript) */
-.sticky {
-    background-color: #1c3a6f; /* Change background color when sticky */
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15); /* Stronger shadow when sticky */
+/* Active Link Styling */
+.nav-links li a.active {
+    color: #ffdd57;
+    border-bottom: 2px solid #ffdd57;
 }
 
-/* Hover Effect for Links */
-.nav-links li a:hover {
-    color: #ffdd57; /* Highlight color */
-    transform: translateY(-5px); /* Slight upward motion */
+/* Hamburger Menu Icon */
+.hamburger {
+    display: none;
+    font-size: 2rem;
+    color: #fff;
+    cursor: pointer;
+    transition: transform 0.3s ease, color 0.3s ease;
 }
 
-/* Active Link Indicator */
-.nav-links li a::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: #ffdd57; /* Gold color underline */
-    transition: width 0.3s ease-in-out;
+.hamburger:hover {
+    transform: rotate(90deg);
+    color: #ffdd57;
 }
 
-.nav-links li a:hover::after {
-    width: 100%; /* Full-width underline on hover */
-}
-
-/* Sticky Effect for Scrolling */
-nav.sticky {
-    background: linear-gradient(135deg, #1c3a6f, #243b55);
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15); /* Add shadow when sticky */
-}
-
-/* Smooth Scroll Animation for Links */
-html {
-    scroll-behavior: smooth;
-}
-
-/* Media Query for Mobile */
+/* Responsive Styling for Mobile View */
 @media (max-width: 768px) {
-    nav .container {
-        flex-direction: column;
-        align-items: flex-start;
+    /* Show Hamburger Menu */
+    .hamburger {
+        display: block;
     }
 
+    /* Nav Links for Mobile */
     .nav-links {
+        display: none;
         flex-direction: column;
-        width: 100%;
-        padding: 10px 0;
+        position: fixed;
+        top: 0;
+        right: 0;
+        background: linear-gradient(135deg, #1f3c88, #101c3a);
+        width: 70%;
+        height: 100vh;
+        text-align: center;
+        padding-top: 100px;
+        z-index: 999;
+        transform: translateX(100%);
+        transition: transform 0.4s ease, opacity 0.4s ease;
+    }
+
+    .nav-links.active {
+        display: flex;
+        transform: translateX(0);
+        opacity: 1;
     }
 
     .nav-links li {
@@ -242,12 +239,96 @@ html {
     }
 
     .nav-links li a {
-        padding: 15px 0;
-        width: 100%;
-        text-align: left;
+        padding: 15px;
+        display: block;
+        color: #fff;
+        text-align: center;
+        font-size: 1.5rem;
+        border-radius: 0;
+        font-weight: 600;
+    }
+
+    .nav-links li a:hover {
+        background-color: rgba(255, 221, 87, 0.2);
+        color: #ffdd57;
     }
 }
 
+/* Section Styling */
+.section {
+    padding-top: 60px; /* Adjust this value based on the navbar height */
+    min-height: 100vh;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.section.active {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+
+/* Smooth Scroll Effect */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Button Styling (for call-to-actions, etc.) */
+button {
+    background: linear-gradient(135deg, #ff5f6d, #ffc371);
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.4s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #ffc371, #ff5f6d);
+    transform: scale(1.1);
+}
+
+/* Footer and Social Icons */
+footer {
+    background-color: #1f3c88;
+    padding: 20px 0;
+    text-align: center;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+footer .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding: 10px 0;
+}
+
+footer .social-icon {
+    color: #fff;
+    font-size: 1.8rem;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+footer .social-icon:hover {
+    transform: scale(1.2) rotate(15deg);
+    color: #ffdd57;
+}
+
+/* Extra Touches */
+header {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.sticky-nav:hover {
+    background: linear-gradient(135deg, #1c2f5a, #101c3a);
+}
 
 /* Add hover animations to the logo */
 .logo img:hover {
@@ -312,64 +393,120 @@ html {
 /* Importing a stylish font */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
-/* Overall about section styling */
-#about {
-    padding: 100px 0;
-    background-color: #f5f5f5;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-}
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500;700&display=swap');
 
-/* H2 Styling */
-#about h2 {
-    font-family: 'Poppins', sans-serif;
-    font-size: 2.5rem;
-    font-weight: 600;
-    margin-bottom: 20px;
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f9;
     color: #333;
-    position: relative;
-    animation: slideIn 1s ease-out;
 }
 
-/* H3 Styling */
-#about h3 {
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.2rem;
-    font-weight: 400;
-    color: #555;
-    max-width: 800px;
-    margin: 0 auto;
-    line-height: 1.8;
-    position: relative;
-    animation: fadeIn 1.5s ease-in-out;
+/* About Section Styling */
+.about-section {
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
+    text-align: center;
 }
 
-/* Container styling */
-.container {
-    width: 100%;
+.about-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 20px;
 }
 
-/* Animation for h2 - sliding in */
-@keyframes slideIn {
-    from {
-        transform: translateX(-100%);
-        opacity: 0;
-    }
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
+/* Image Styling with Hover Effect */
+.about-image img {
+    width: 100%;
+    max-width: 350px;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
 }
 
-/* Animation for h3 - fading in */
+.about-image img:hover {
+    transform: scale(1.05) rotate(1deg);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Content Styling */
+.about-content {
+    flex: 1;
+    max-width: 600px;
+    animation: fadeIn 1s ease-out;
+}
+
+.about-content h2 {
+    font-size: 2.5rem;
+    font-family: 'Raleway', sans-serif;
+    color: #1f3c88;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.about-content p {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 25px;
+    padding: 0 10px;
+}
+
+/* Skill Icons Section */
+.about-icons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* Individual Icon Styling */
+.icon {
+    text-align: center;
+    flex: 1 1 45%;
+    max-width: 150px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 10px;
+    border-radius: 12px;
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.icon:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.icon i {
+    font-size: 2.5rem;
+    color: #ff7e5f;
+    margin-bottom: 8px;
+    transition: color 0.3s ease;
+}
+
+.icon:hover i {
+    color: #ffdd57;
+}
+
+.icon p {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #333;
+}
+
+/* Keyframe Animation */
 @keyframes fadeIn {
     from {
         opacity: 0;
-        transform: translateY(30px);
+        transform: translateY(20px);
     }
     to {
         opacity: 1;
@@ -377,14 +514,25 @@ html {
     }
 }
 
-/* Adding hover effect for interaction */
-#about h3:hover {
-    color: #000;
-    transition: color 0.3s ease;
-}
+/* Responsive Design */
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column;
+    }
 
-/* Import Google Fonts for a sleek, modern look */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+    .about-image img {
+        max-width: 250px;
+        margin-bottom: 20px;
+    }
+
+    .about-content h2 {
+        font-size: 2rem;
+    }
+
+    .about-content p {
+        font-size: 1rem;
+    }
+}
 
 /* General Styles */
 body {
@@ -515,8 +663,8 @@ body {
 /* General Styles */
 body {
     font-family: 'Raleway', sans-serif;
-    background-color: rgba(0, 0, 0, 0.87);
-    color: #333;
+    background-color: #eee);
+    color: #fff;
 }
 
 h2 {
@@ -531,11 +679,11 @@ h2 {
     display: inline-block;
     padding-bottom: 10px;  /* Padding to make room for underline */
     text-transform: uppercase;  /* Capitalize for a bold look */
-    background: linear-gradient(45deg, #93a2b1, #00c6ff);  /* Gradient text effect */
+    background: linear-gradient(165deg, #ffd700, #ffdd57);  /* Gradient text effect */
     -webkit-background-clip: text;  /* Clip background to text */
-    -webkit-text-fill-color: transparent;  /* Set text color to transparent to show gradient */
+    -webkit-text-fill-color: rgb(0 0 0 / 50%);  /* Set text color to transparent to show gradient */
     animation: fadeInSlideUp 1.5s ease-in-out both, textGlow 3s ease-in-out infinite alternate;  /* Text animation */
-    border-bottom: 2px solid rgba(255, 255, 255, 0.5);  /* Stylish underline */
+    border-bottom: 2px solid #fff;  /* Stylish underline */
 }
 
 /* Keyframe for fade-in and sliding-up animation */
@@ -561,8 +709,8 @@ h2 {
 }
 
 .container {
-    width: 90%;
-    max-width: 1200px;
+    width: 99%;
+    height: -webkit-fill-available;
     margin: 0 auto;
 }
 
@@ -745,7 +893,7 @@ section-title {
 
 .section-subtitle {
     font-size: 1.2em;
-    color: #555;
+    color: #000000;
     font-weight: 400;
     text-align: center;
     margin-bottom: 40px;

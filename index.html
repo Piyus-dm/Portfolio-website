@@ -11,18 +11,21 @@
 <body>
 
     <header>
-        <nav class="sticky-nav" id="navbar"> <!-- Added id="navbar" here -->
+        <nav class="sticky-nav" id="navbar">
             <div class="container">
                 <h1 class="logo">
                     <img src="img/header logo.png" alt="Piyus Khatri Logo" onclick="location.reload();">
                 </h1>
-                  
+    
+                <!-- Hamburger menu icon for mobile view -->
+                <div class="hamburger" onclick="toggleMenu()">☰</div>
+    
                 <ul class="nav-links">
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#experience">Experience</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#about" onclick="closeMenu()">About</a></li>
+                    <li><a href="#skills" onclick="closeMenu()">Skills</a></li>
+                    <li><a href="#experience" onclick="closeMenu()">Experience</a></li>
+                    <li><a href="#projects" onclick="closeMenu()">Projects</a></li>
+                    <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
                 </ul>
             </div>
         </nav>
@@ -42,10 +45,39 @@
         </div>
     </section>
 
-    <section id="about" class="about">
-        <div class="container">
-            <h2>About Me</h2>
-            <h3>Hey there, I'm a digitalist, visualizer, developer, and freelancer who loves bringing bold ideas to life. From crafting sleek websites to making brands pop online, I’m all about creative solutions that get results. Let’s turn your vision into something awesome.</h3>
+    <section id="about" class="about-section">
+        <div class="about-container">
+            <!-- Left Column: Profile Image or Graphic -->
+            <div class="about-image">
+                <img src="img/piyuspic.jpg" alt="Piyus Khatri" />
+            </div>
+    
+            <!-- Right Column: Bio and Icons for Skills/Interests -->
+            <div class="about-content">
+                <h2>About Me</h2>
+                <p>
+                    Hey there! I'm a digitalist, visualizer, developer, and freelancer who loves bringing bold ideas to life. From crafting sleek websites to making brands pop online, I’m all about creative solutions that get results. Let’s turn your vision into something awesome.
+                </p>
+                <!-- Icons for Skills or Interests -->
+                <div class="about-icons">
+                    <div class="icon">
+                        <i class="fas fa-laptop-code"></i> <!-- Coding Icon -->
+                        <p>Web Development</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fas fa-paint-brush"></i> <!-- Design Icon -->
+                        <p>Design</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fas fa-chart-line"></i> <!-- Marketing Icon -->
+                        <p>Digital Marketing</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fas fa-robot"></i> <!-- Bot Development Icon -->
+                        <p>Bot Development</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
             <p class="job-sequence">
