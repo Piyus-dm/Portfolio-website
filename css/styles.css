@@ -1158,7 +1158,7 @@ section-title {
     transition: transform 0.3s, color 0.3s, box-shadow 0.3s;
 }
 
-/* Icon Hover Animations */
+/* Icon Hover Animations asdfasf */
 .social-icon:hover {
     transform: scale(1.2); /* Slight enlargement */
     /* box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3); Soft glow */
