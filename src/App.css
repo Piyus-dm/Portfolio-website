@@ -1,0 +1,1136 @@
+:root {
+  --bg: #000000;
+  --text: #ffffff;
+  --muted: #7a7a7a;
+  --line: #1a1a1a;
+  --line-strong: #333333;
+  --card: #0a0a0a;
+  --dot: rgba(255, 255, 255, 0.06);
+}
+
+:root[data-theme="light"] {
+  --bg: #ffffff;
+  --text: #0a0a0a;
+  --muted: #6b6b6b;
+  --line: #e4e4e4;
+  --line-strong: #bdbdbd;
+  --card: #f7f7f7;
+  --dot: rgba(0, 0, 0, 0.07);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  background-image: radial-gradient(var(--dot) 1px, transparent 1px);
+  background-size: 26px 26px;
+  color: var(--text);
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.6s ease, color 0.6s ease;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+}
+
+button {
+  font-family: "Space Grotesk", sans-serif;
+  background: none;
+  border: none;
+  color: var(--text);
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.app {
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+main {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 clamp(1.5rem, 5vw, 4rem);
+}
+
+.topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.6rem clamp(1.5rem, 5vw, 4rem);
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(8px);
+  transition: border-color 0.6s ease;
+}
+
+.topbar-mark {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  font-size: 1.05rem;
+}
+
+.topbar .theme-toggle {
+  letter-spacing: 0.06em;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.section-index-mask {
+  overflow: hidden;
+  margin-bottom: 3.5rem;
+}
+
+.section-index {
+  display: block;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 9rem 0 4rem;
+}
+
+.hero-headline {
+  font-size: clamp(2.8rem, 9vw, 8rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  max-width: 17ch;
+}
+
+.hero-word-mask {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+  padding-bottom: 0.1em;
+  margin-bottom: -0.1em;
+}
+
+.hero-word {
+  display: inline-block;
+  will-change: transform, opacity;
+}
+
+.hero-sub {
+  margin-top: 2.75rem;
+  color: var(--muted);
+  font-size: clamp(0.95rem, 1.5vw, 1.15rem);
+  letter-spacing: 0.01em;
+  max-width: 42ch;
+  border-left: 2px solid var(--line-strong);
+  padding-left: 1rem;
+}
+
+.hero-cta {
+  margin-top: 3.75rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  padding: 0.5rem 0;
+}
+
+.magnetic {
+  display: inline-block;
+  transition: color 0.3s ease;
+}
+
+.magnetic:hover {
+  color: var(--muted);
+}
+
+.topbar .magnetic:hover {
+  color: var(--text);
+}
+
+.manifesto {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 0;
+  padding: 9rem 0;
+  align-items: start;
+  border-top: 1px solid var(--line);
+  transition: border-color 0.6s ease;
+}
+
+.manifesto-visual {
+  position: sticky;
+  top: 8rem;
+  padding-right: clamp(2rem, 5vw, 4rem);
+  border-right: 1px solid var(--line);
+  transition: border-color 0.6s ease;
+}
+
+.blueprint {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  border: 1px solid var(--line);
+  overflow: hidden;
+  transition: border-color 0.6s ease;
+}
+
+.blueprint-axis {
+  position: absolute;
+  background: var(--line);
+  transition: background 0.6s ease;
+}
+
+.blueprint-axis-h {
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+}
+
+.blueprint-axis-v {
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+}
+
+.blueprint-tick {
+  position: absolute;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+}
+
+.blueprint-tick-tl {
+  top: 1rem;
+  left: 1rem;
+}
+
+.blueprint-tick-tr {
+  top: 1rem;
+  right: 1rem;
+}
+
+.blueprint-tick-bl {
+  bottom: 1rem;
+  left: 1rem;
+}
+
+.blueprint-tick-br {
+  bottom: 1rem;
+  right: 1rem;
+}
+
+.blueprint-crosshair {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 14px;
+  height: 14px;
+  transform: translate(-50%, -50%);
+  border: 1px solid var(--line-strong);
+  border-radius: 50%;
+}
+
+.blueprint-crosshair::before,
+.blueprint-crosshair::after {
+  content: "";
+  position: absolute;
+  background: var(--line-strong);
+}
+
+.blueprint-crosshair::before {
+  top: 50%;
+  left: -6px;
+  right: -6px;
+  height: 1px;
+  transform: translateY(-50%);
+}
+
+.blueprint-crosshair::after {
+  left: 50%;
+  top: -6px;
+  bottom: -6px;
+  width: 1px;
+  transform: translateX(-50%);
+}
+
+.blueprint-label {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  color: var(--muted);
+}
+
+.manifesto-text {
+  padding-left: clamp(2rem, 5vw, 4rem);
+}
+
+.manifesto-tabs {
+  display: flex;
+  gap: 1.75rem;
+  margin-bottom: 2.75rem;
+}
+
+.tab {
+  letter-spacing: 0.08em;
+  font-size: 0.95rem;
+  color: var(--muted);
+  transition: color 0.3s ease;
+}
+
+.tab-active {
+  color: var(--text);
+}
+
+.manifesto-copy {
+  overflow: hidden;
+}
+
+.manifesto-para {
+  font-size: clamp(1.05rem, 1.6vw, 1.3rem);
+  line-height: 1.75;
+  max-width: 55ch;
+}
+
+.manifesto-para + .manifesto-para {
+  margin-top: 1.5rem;
+}
+
+.matrix {
+  padding: 0 0 10rem;
+}
+
+.matrix-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  transition: background 0.6s ease, border-color 0.6s ease;
+}
+
+.matrix-card {
+  min-width: 0;
+  background: var(--bg);
+  padding: clamp(2rem, 4vw, 3.5rem);
+  transition: background-color 0.6s ease, box-shadow 0.35s ease;
+}
+
+.matrix-card:hover {
+  box-shadow: inset 0 0 0 1px var(--line-strong);
+}
+
+.matrix-code {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  color: var(--muted);
+}
+
+.matrix-title {
+  font-size: clamp(1.7rem, 3.2vw, 2.4rem);
+  margin: 1.1rem 0 1.6rem;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.matrix-card:hover .matrix-title {
+  transform: translateX(4px);
+}
+
+.matrix-list {
+  list-style: none;
+}
+
+.matrix-list li {
+  color: var(--muted);
+  font-size: 0.95rem;
+  padding: 0.45rem 0;
+  border-bottom: 1px solid var(--line);
+  transition: color 0.3s ease, border-color 0.6s ease;
+}
+
+.matrix-list li:last-child {
+  border-bottom: none;
+}
+
+.matrix-card:hover .matrix-list li {
+  color: var(--text);
+}
+
+.matrix-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  margin-top: 3rem;
+}
+
+.badge {
+  display: inline-block;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  border: 1px solid var(--line-strong);
+  padding: 0.5rem 1.1rem;
+  cursor: default;
+  transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.badge:hover {
+  color: var(--bg);
+  background-color: var(--text);
+  border-color: var(--text);
+}
+
+.trajectory {
+  padding: 6rem 0 10rem;
+  border-top: 1px solid var(--line);
+  transition: border-color 0.6s ease;
+}
+
+.timeline {
+  position: relative;
+  padding-left: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+}
+
+.timeline-rail {
+  position: absolute;
+  left: 0.35rem;
+  top: 0.5rem;
+  bottom: 0.5rem;
+  width: 1px;
+  background: var(--line);
+}
+
+.timeline-progress {
+  width: 100%;
+  height: 100%;
+  background: var(--text);
+  transform-origin: top;
+}
+
+.timeline-node {
+  position: relative;
+  max-width: 60ch;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -3rem;
+  top: 0.5rem;
+  width: 9px;
+  height: 9px;
+  border: 1px solid var(--text);
+  background: var(--bg);
+  transition: background 0.6s ease;
+}
+
+.timeline-era {
+  font-size: clamp(1.3rem, 2.5vw, 1.9rem);
+  margin-bottom: 0.9rem;
+}
+
+.timeline-text {
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+
+.playground {
+  padding: 6rem 0 10rem;
+  border-top: 1px solid var(--line);
+  transition: border-color 0.6s ease;
+}
+
+.playground-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  transition: background 0.6s ease, border-color 0.6s ease;
+}
+
+.playground-cell {
+  min-width: 0;
+  background: var(--bg);
+  padding: clamp(1.5rem, 2.5vw, 2.25rem);
+  transition: background-color 0.6s ease;
+}
+
+.terminal-card {
+  --term-green: #33ff99;
+  --term-red: #ff5f56;
+  font-family: "Space Grotesk", sans-serif;
+}
+
+.terminal-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 1.25rem;
+}
+
+.terminal-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  opacity: 0.6;
+}
+
+.terminal-dot-red {
+  background: #ff5f56;
+}
+
+.terminal-dot-yellow {
+  background: #ffbd2e;
+}
+
+.terminal-dot-green {
+  background: #27c93f;
+}
+
+.terminal-title {
+  margin-left: 0.5rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+}
+
+.terminal-body {
+  height: 220px;
+  overflow-y: auto;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.85rem;
+  line-height: 1.8;
+  scrollbar-width: thin;
+  scrollbar-color: var(--line-strong) transparent;
+}
+
+.terminal-line {
+  color: var(--term-green);
+  opacity: 0.85;
+}
+
+.terminal-line-error {
+  color: var(--term-red);
+  opacity: 0.9;
+}
+
+.terminal-line-success {
+  color: var(--term-green);
+  opacity: 1;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+.terminal-cursor {
+  display: inline-block;
+  width: 7px;
+  height: 14px;
+  background: var(--term-green);
+  animation: terminal-blink 1s steps(1) infinite;
+  vertical-align: middle;
+}
+
+@keyframes terminal-blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.terminal-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--line);
+}
+
+.terminal-btn {
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  color: var(--text);
+  border: 1px solid var(--line-strong);
+  padding: 0.6rem 1.1rem;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.terminal-btn:hover {
+  background: var(--text);
+  color: var(--bg);
+}
+
+.terminal-btn-ghost {
+  color: var(--muted);
+  border-color: var(--line);
+}
+
+.terminal-btn-ghost:hover {
+  background: transparent;
+  color: var(--text);
+  border-color: var(--line-strong);
+}
+
+.terminal-ports {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.terminal-port {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.85rem;
+  color: var(--term-green);
+  border: 1px solid var(--line-strong);
+  padding: 0.55rem 1rem;
+  transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1), background-color 0.25s ease, color 0.25s ease;
+}
+
+.terminal-port:hover {
+  transform: translateY(-2px);
+  background: var(--term-green);
+  color: #000000;
+}
+
+.vault-card {
+  font-family: "Space Grotesk", sans-serif;
+}
+
+.vault-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 1.25rem;
+}
+
+.vault-title {
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+}
+
+.vault-status {
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+}
+
+.vault-input {
+  width: 100%;
+  background: var(--card);
+  border: 1px solid var(--line-strong);
+  color: var(--text);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.95rem;
+  padding: 0.75rem 1rem;
+  outline: none;
+  transition: border-color 0.25s ease;
+}
+
+.vault-input:focus {
+  border-color: var(--text);
+}
+
+.vault-readouts {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.vault-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.vault-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.vault-label-shift {
+  justify-content: space-between;
+}
+
+.vault-shift {
+  flex: 1;
+  min-width: 0;
+  accent-color: var(--text);
+}
+
+.vault-shift-value {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  color: var(--text);
+}
+
+.vault-value {
+  display: block;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.85rem;
+  color: var(--text);
+  word-break: break-all;
+  border: 1px solid var(--line);
+  padding: 0.6rem 0.8rem;
+  min-height: 2.4em;
+}
+
+.entropy-card {
+  --e-weak: #ff5f56;
+  --e-fair: #ffbd2e;
+  --e-good: #a3e635;
+  --e-strong: #33ff99;
+  --e-vault: #38bdf8;
+  font-family: "Space Grotesk", sans-serif;
+}
+
+.entropy-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 1.25rem;
+}
+
+.entropy-title {
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+}
+
+.entropy-status {
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+}
+
+.entropy-status-weak {
+  color: var(--e-weak);
+}
+
+.entropy-status-fair {
+  color: var(--e-fair);
+}
+
+.entropy-status-good {
+  color: var(--e-good);
+}
+
+.entropy-status-strong {
+  color: var(--e-strong);
+}
+
+.entropy-status-vault {
+  color: var(--e-vault);
+}
+
+.entropy-input-row {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.entropy-input {
+  flex: 1;
+  min-width: 0;
+  background: var(--card);
+  border: 1px solid var(--line-strong);
+  color: var(--text);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.95rem;
+  padding: 0.75rem 1rem;
+  outline: none;
+  transition: border-color 0.25s ease;
+}
+
+.entropy-input:focus {
+  border-color: var(--text);
+}
+
+.entropy-toggle {
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  border: 1px solid var(--line-strong);
+  padding: 0 1rem;
+  transition: color 0.25s ease, border-color 0.25s ease;
+}
+
+.entropy-toggle:hover {
+  color: var(--text);
+  border-color: var(--text);
+}
+
+.entropy-meter-track {
+  margin-top: 1.25rem;
+  height: 4px;
+  background: var(--line);
+  overflow: hidden;
+}
+
+.entropy-meter-fill {
+  height: 100%;
+}
+
+.entropy-meter-fill-weak {
+  background: var(--e-weak);
+}
+
+.entropy-meter-fill-fair {
+  background: var(--e-fair);
+}
+
+.entropy-meter-fill-good {
+  background: var(--e-good);
+}
+
+.entropy-meter-fill-strong {
+  background: var(--e-strong);
+}
+
+.entropy-meter-fill-vault {
+  background: var(--e-vault);
+}
+
+.entropy-stats {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.entropy-stat {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.25rem 0.75rem;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 0.6rem;
+}
+
+.entropy-stat:last-child {
+  border-bottom: none;
+}
+
+.entropy-stat-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  flex-shrink: 0;
+}
+
+.entropy-stat-value {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.85rem;
+  color: var(--text);
+  text-align: right;
+  word-break: break-word;
+  min-width: 0;
+}
+
+.entropy-note {
+  margin-top: 1.5rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+}
+
+.funnel-card {
+  font-family: "Space Grotesk", sans-serif;
+}
+
+.funnel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 1.5rem;
+}
+
+.funnel-title {
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+}
+
+.funnel-status {
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  color: #33ff99;
+}
+
+.funnel-controls {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem 2rem;
+}
+
+.funnel-control {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.funnel-control-label {
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+}
+
+.funnel-control-label b {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.funnel-control input[type="range"] {
+  width: 100%;
+  min-width: 0;
+  accent-color: var(--text);
+}
+
+.funnel-outputs {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+}
+
+.funnel-output {
+  min-width: 0;
+  background: var(--bg);
+  padding: 1rem 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.funnel-output-label {
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+}
+
+.funnel-output-value {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: clamp(1rem, 1.6vw, 1.3rem);
+  color: var(--text);
+}
+
+.funnel-output-primary .funnel-output-value {
+  color: #33ff99;
+}
+
+.transmission {
+  padding: 10rem 0 6rem;
+  border-top: 1px solid var(--line);
+  transition: border-color 0.6s ease;
+}
+
+.transmission-headline {
+  font-size: clamp(2rem, 5.5vw, 4.5rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  max-width: 22ch;
+}
+
+.transmission-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 4rem;
+}
+
+.transmission-link {
+  position: relative;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1rem;
+  letter-spacing: 0.06em;
+  color: var(--text);
+  text-decoration: none;
+  padding-bottom: 0.3rem;
+}
+
+.transmission-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background: var(--text);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), background 0.6s ease;
+}
+
+.transmission-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.transmission-footnote {
+  margin-top: 6rem;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  border-top: 1px solid var(--line);
+  padding-top: 1.5rem;
+}
+
+@media (max-width: 900px) {
+  .manifesto {
+    grid-template-columns: 1fr;
+    padding: 6rem 0;
+  }
+
+  .manifesto-visual {
+    position: static;
+    max-width: 400px;
+    padding-right: 0;
+    border-right: none;
+    padding-bottom: 3rem;
+    margin-bottom: 3rem;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .manifesto-text {
+    padding-left: 0;
+  }
+
+  .matrix-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .playground-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .playground-cell {
+    padding: 1.75rem;
+  }
+}
+
+@media (max-width: 600px) {
+  main {
+    padding: 0 1.25rem;
+  }
+
+  .hero {
+    min-height: auto;
+    padding-top: 7rem;
+    padding-bottom: 3rem;
+  }
+
+  .hero-headline {
+    letter-spacing: -0.02em;
+  }
+
+  .manifesto {
+    padding: 4rem 0;
+  }
+
+  .matrix {
+    padding: 0 0 5rem;
+  }
+
+  .matrix-card {
+    padding: 1.75rem;
+  }
+
+  .trajectory {
+    padding: 4rem 0 5rem;
+  }
+
+  .timeline {
+    gap: 3.5rem;
+    padding-left: 2.25rem;
+  }
+
+  .timeline-dot {
+    left: -2.25rem;
+  }
+
+  .playground {
+    padding: 4rem 0 5rem;
+  }
+
+  .playground-cell {
+    padding: 1.5rem;
+  }
+
+  .terminal-body {
+    height: 180px;
+    font-size: 0.78rem;
+  }
+
+  .vault-input,
+  .entropy-input {
+    font-size: 16px;
+  }
+
+  .transmission {
+    padding: 6rem 0 4rem;
+  }
+
+  .transmission-headline {
+    max-width: 100%;
+  }
+
+  .transmission-links {
+    gap: 1.2rem;
+  }
+
+  .funnel-controls {
+    grid-template-columns: 1fr;
+  }
+
+  .funnel-outputs {
+    grid-template-columns: 1fr;
+  }
+}
